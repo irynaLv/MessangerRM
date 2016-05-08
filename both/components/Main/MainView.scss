@@ -1,0 +1,121 @@
+$blue: #1976d2   ;
+$lightBlue: #e3f2fd ;
+$white: #ffffff;
+$purple: #673AB7;
+$yellow: #FFEB3B;
+$red: #F44336;
+$orange: #e65100;
+$black: #333333;
+main{
+  .messages-container{
+    padding-bottom: 9em;
+  }
+  .message-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin: ((64px - (64px/1.5)) / 2) 0;
+    padding: ((64px - (64px/1.5)) / 2) 0;
+
+    .circle-wrapper {
+      height: 40PX;
+      width: 40PX;
+      border-radius: 50%;
+    }
+
+    .text-wrapper {
+      padding: (64px - (64px/1.5)) / 2;
+      width: 90%;
+      margin: 0 (64px - (64px/1.5)) / 2;
+      box-shadow: 0px 1px 0px 0px rgba(50, 50, 50, 0.3);
+      border-radius: 2px;
+      font-weight: 300;
+      position: relative;
+
+      &:before {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+      }
+
+    }
+    .date-wrapper{
+      text-align: right;
+      font-style: italic;
+    }
+    .name-wrapper{
+      font-weight: 600;
+      text-decoration: underline;
+      line-height: 2em;
+    }
+
+    &.them {
+      .circle-wrapper, .text-wrapper {
+        background: $blue;
+        float: left;
+        color: $white;
+      }
+
+      .text-wrapper {
+        &:before {
+          border-width: 0 10px 10px 0;
+          border-color: transparent $blue transparent transparent;
+          position: absolute;
+          top: 0;
+          left: -9px;
+        }
+      }
+    }
+
+    &.me {
+      .circle-wrapper, .text-wrapper {
+        background: $lightBlue;
+        float: right;
+        color: $black;
+      }
+
+      .text-wrapper {
+        &:before {
+          border-width: 10px 10px 0 0;
+          border-color: $lightBlue transparent transparent transparent;
+          position: absolute;
+          top: 0;
+          right: -9px;
+        }
+      }
+    }
+  }
+  .bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 9em;
+    background: $white;
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
+.btn{
+  background-color: #0d47a1 !important;
+}
+
+.input-field{
+  textarea{
+    &.materialize-textarea:focus{
+      border-bottom: 1px solid #0d47a1;
+    }
+  }
+  label{
+    &.active{
+      color: #0d47a1 !important;
+    }
+  }
+}
+
+.first-button{
+  float: left;
+  margin-right: 2em;
+}
